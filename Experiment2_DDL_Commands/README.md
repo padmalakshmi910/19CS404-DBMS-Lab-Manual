@@ -104,19 +104,17 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
---```sql
--- Create Employees table
-CREATE TABLE Employees (
-    EmployeeID INT PRIMARY KEY,
-    FirstName VARCHAR(50) NOT NULL,
-    LastName VARCHAR(50) NOT NULL,
-    Email VARCHAR(100) UNIQUE,
-    Salary DECIMAL(10,2) CHECK (Salary > 0),
-    DepartmentID INT,
-    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
-);
+Create a table named Employees with the following constraints:
 
+EmployeeID should be the primary key.
+FirstName and LastName should be NOT NULL.
+Email should be unique.
+Salary should be greater than 0.
+DepartmentID should be a foreign key referencing the Departments table.
+
+### Test Result
+
+```sql
 -- Attempt to insert a record with NULL FirstName
 INSERT INTO Employees (EmployeeID, FirstName, LastName, Email, Salary, DepartmentID)
 VALUES (1, NULL, 'Doe', 'john.doe@example.com', 50000, 1);
@@ -124,11 +122,7 @@ VALUES (1, NULL, 'Doe', 'john.doe@example.com', 50000, 1);
 
 **Error:**
 ```text
-NOT NULL constraint failed: Employees.FirstName
-```
-
-```sql
--- Paste your SQL code below for Question 1
+Error: NOT NULL constraint failed: Employees.FirstName
 ```
 
 **Output:**
