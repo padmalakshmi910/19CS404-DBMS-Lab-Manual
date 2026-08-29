@@ -64,18 +64,6 @@ commission_pct
 manager_id
 department_id
 
-For example:
-
-Test	Result
-SELECT EMPLOYEE_ID, FIRST_NAME, HIRE_DATE FROM EMPLOYEES 
-WHERE DEPARTMENT_ID=50 LIMIT 3;
-
-EMPLOYEE_ID  FIRST_NAME  HIRE_DATE
------------  ----------  ----------
-120          Matthew     2024-01-24
-121          Adam        2024-01-24
-122          Payam       2024-01-24
-
 ## CODE;
 ```
 update Employees set hire_date='2024-01-24'
@@ -103,20 +91,6 @@ reorder_lvl        INT
 quantity           INT
 supplier_id        INT
 
-For example:
-
-Test	Result
-SELECT*FROM Products WHERE supplier_id = 10;
-product_id  product_name      category    cost_price  sell_price  reorder_lvl  quantity    supplier_id
-----------  ----------------  ----------  ----------  ----------  -----------  ----------  -----------
-6           Detergent Powder  Snacks      60          80          20           40          10
-7           Surf Excel Deter  Snacks      85          100         10           40          10
-8           Detergent Ariel   Items       85          100         10           40          10
-product_id  product_name      category    cost_price  sell_price  reorder_lvl  quantity    supplier_id
-----------  ----------------  ----------  ----------  ----------  -----------  ----------  -----------
-6           Detergent Powder  Snacks      60          81          20           40          10
-7           Surf Excel Deter  Snacks      85          114         10           40          10
-8           Detergent Ariel   Items       85          114         10           40 
 
 ## CODE:
 
@@ -150,22 +124,7 @@ salary
 commission_pct
 manager_id
 department_id
-For example:
 
-Test	Result
-SELECT EMPLOYEE_ID, FIRST_NAME, SALARY, PHONE_NUMBER, EMAIL, JOB_ID FROM EMPLOYEES LIMIT 10;
-EMPLOYEE_ID  FIRST_NAME  SALARY      PHONE_NUMBER  EMAIL       JOB_ID
------------  ----------  ----------  ------------  ----------  ----------
-100          Steven      27600       515.123.4567  SKING       AD_PRES
-101          Neena       19550       515.123.4568  NKOCHHAR    AD_VP
-102          Lex         19550       515.123.4569  LDEHAAN     AD_VP
-103          Alexander   9000        590.423.4567  AHUNOLD     IT_PROG
-104          Bruce       6000        590.423.4568  BERNST      IT_PROG
-105          David       4800        590.423.4569  DAUSTIN     IT_PROG
-106          Valli       4800        590.423.4560  VPATABAL    IT_PROG
-107          Diana       4200        590.423.5567  DLORENTZ    IT_PROG
-108          Nancy       12000       515.124.4569  NGREENBE    FI_MGR
-109          Daniel      9000    
 
 ## CODE:
 
@@ -202,13 +161,6 @@ manager_id
 department_id
 For example:
 
-Test	Result
-SELECT EMPLOYEE_ID,FIRST_NAME,EMAIL,COMMISSION_PCT FROM EMPLOYEES 
-WHERE DEPARTMENT_ID=110 LIMIT 1;
-
-EMPLOYEE_ID  FIRST_NAME  EMAIL          COMMISSION_PCT
------------  ----------  -------------  --------------
-205          Shelley     not available  0.55
 
 ## CODE:
 
@@ -237,13 +189,6 @@ sell_price     DECIMAL(10)
 reorder_lvl    INT        
 quantity       INT        
 supplier_id    INT           
-For example:
-
-Test	Result
-select changes();
-changes()
-----------
-4
 
 ## CODE:
 
@@ -267,21 +212,6 @@ Sample table: Customer
 | C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003       |
 | C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008       |
 | C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 | BBBBSBB      | A008       |
-For example:
-
-Test	Result
-select changes();
-CUST_CODE   CUST_NAME   CUST_CITY   WORKING_AREA  CUST_COUNTRY  GRADE       OPENING_AMT  RECEIVE_AMT  PAYMENT_AMT  OUTSTANDING_AMT  PHONE_NO    AGENT_CODE
-----------  ----------  ----------  ------------  ------------  ----------  -----------  -----------  -----------  ---------------  ----------  ----------
-C00013      Holmes      London      London        UK            2           6000         5000         7000         4000             BBBBBBB     A003
-C00020      Albert      New York    New York      USA           3           5000         7000         6000         6000             BBBBSBB     A008
-C00015      Stuart      London      London        UK            1           6000         8000         3000         11000            GFSGERS     A003
-C00012      Steven      San Jose    San Jose      USA           1           5000         7000         9000         3000             KRFYGJK     A012
-C00003      Martin      Torento     Torento       Canada        2           8000         7000         7000         8000             MJYURFD     A004
-C00009      Ramesh      Mumbai      Mumbai        India         3           8000         7000         3000         12000            Phone No    A002
-changes()
-----------
-6
 
 **Output:**
 
