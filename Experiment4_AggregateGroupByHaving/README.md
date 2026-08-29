@@ -36,121 +36,73 @@ GROUP BY column_name
 HAVING condition;
 ```
 
-**Question 1**
---
--- Paste Question 1 here
+## Question 1
+## CODE:
 
-```sql
--- Paste your SQL code below for Question 1
-```
 
 **Output:**
 
 ![Output1](output.png)
 
-**Question 2**
----
--- Paste Question 2 here
-
-```sql
--- Paste your SQL code below for Question 2
-```
+## Question 1
+## CODE:
 
 **Output:**
 
 ![Output2](output.png)
 
-**Question 3**
----
--- Paste Question 3 here
-
-```sql
--- Paste your SQL code below for Question 3
-```
+## Question 1
+## CODE:
 
 **Output:**
 
 ![Output3](output.png)
 
-**Question 4**
----
--- Paste Question 4 here
+## Question 1
+## CODE:
 
-```sql
--- Paste your SQL code below for Question 4
-```
 
 **Output:**
 
 ![Output4](output.png)
 
-**Question 5**
----
--- Paste Question 5 here
-
-```sql
--- Paste your SQL code below for Question 5
-```
+## Question 1
+## CODE:
 
 **Output:**
 
 ![Output5](output.png)
 
-**Question 6**
----
--- Paste Question 6 here
-
-```sql
--- Paste your SQL code below for Question 6
-```
+## Question 1
+## CODE:
 
 **Output:**
 
 ![Output6](output.png)
 
-**Question 7**
----
--- Paste Question 7 here
-
-```sql
--- Paste your SQL code below for Question 7
-```
+## Question 1
+## CODE:
 
 **Output:**
 
 ![Output7](output.png)
 
-**Question 8**
----
--- Paste Question 8 here
-
-```sql
--- Paste your SQL code below for Question 8
-```
+## Question 1
+## CODE:
 
 **Output:**
 
 ![Output8](output.png)
 
-**Question 9**
----
--- Paste Question 9 here
-
-```sql
--- Paste your SQL code below for Question 9
-```
+## Question 1
+## CODE:
 
 **Output:**
 
 ![Output9](output.png)
 
-**Question 10**
----
--- Paste Question 10 here
-
-```sql
--- Paste your SQL code below for Question 10
-```
+## Question 1
+## CODE:
 
 **Output:**
 
