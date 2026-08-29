@@ -45,8 +45,8 @@ Used to retrieve records from a table.
 ```sql
 SELECT column1, column2 FROM table_name WHERE condition;
 ```
-**Question 1**
---
+## Question 1
+
 Write a SQL statement to Update the hire_date of employees in department 50 to 2024-01-24.
 
 Employees table
@@ -75,7 +75,7 @@ where department_id=50;
 <img width="1206" height="262" alt="Screenshot 2026-08-29 191452" src="https://github.com/user-attachments/assets/901a3160-5e1b-45f5-ab99-8f5ad9b93284" />
 
 
-**Question 2**
+## Question 2
 
 For products with a profit % less than 30% of selling price, update the selling price to provide a profit margin of 35% over cost price of the product in the products table.
 
@@ -106,7 +106,7 @@ where ((sell_price-cost_price)/sell_price)*100<30;
 <img width="1190" height="536" alt="Screenshot 2026-08-29 191506" src="https://github.com/user-attachments/assets/cb536b74-3e91-416b-b7d1-f952c5e3119a" />
 
 
-**Question 3**
+## Question 3
 
 Write a SQL statement to increase the salary of employees under the department 40, 90 and 110 according to the company rules.
 
@@ -144,7 +144,8 @@ end;
 <img width="1192" height="512" alt="Screenshot 2026-08-29 191519" src="https://github.com/user-attachments/assets/7e83b015-5043-4c88-94cb-5dd1bacbc580" />
 
 
-**Question 4**
+
+## Question 4
 
 Write a SQL statement to change the EMAIL and COMMISSION_PCT column of the following EMPLOYEES table with 'not available' and 0.55 for those employees whose DEPARTMENT_ID is 110.
 
@@ -175,7 +176,7 @@ where department_id=110;
 
 <img width="1218" height="447" alt="Screenshot 2026-08-29 191548" src="https://github.com/user-attachments/assets/0dfb14b3-fd28-470c-892d-806c2d8cfe92" />
 
-**Question 5**
+## Question 5
 
 Write a SQL statement to Change the category to 'Household' where product name contains 'Detergent' in the products table.
 
@@ -203,7 +204,7 @@ set category='Household' where product_name LIKE '%Detergent%';
 <img width="1203" height="540" alt="Screenshot 2026-08-29 191558" src="https://github.com/user-attachments/assets/d226c064-8ca1-4192-b8a1-fd337bfdec63" />
 
 
-**Question 6**
+## Question 6
 
 Write a SQL query to Delete customers from 'customer' table where 'CUST_NAME' has exactly 6 characters.
 
@@ -218,7 +219,7 @@ delete from customer where length(CUST_NAME)=6;
 <img width="1210" height="788" alt="Screenshot 2026-08-29 191613" src="https://github.com/user-attachments/assets/3c2af222-baa7-441c-9469-4c270176cc4c" />
 
 
-**Question 7**
+## Question 7
 
 Write a SQL query to Delete customers from 'customer' table where 'CUST_NAME' contains the substring 'Holmes'.
 
@@ -236,7 +237,7 @@ where CUST_NAME like '%Holmes%';
 <img width="1200" height="612" alt="Screenshot 2026-08-29 191623" src="https://github.com/user-attachments/assets/85edbe60-fb09-4f48-8b0f-7a09284ea58e" />
 
 
-**Question 8**
+## Question 8
 
 Write a SQL query to Delete customers whose 'GRADE' is greater than 2 and have a 'PAYMENT_AMT' less than the average 'PAYMENT_AMT' for all customers, or whose 'OUTSTANDING_AMT' is greater than 8000:
 
@@ -254,7 +255,7 @@ or outstanding_amt>8000;
 <img width="1186" height="695" alt="Screenshot 2026-08-29 191635" src="https://github.com/user-attachments/assets/6ba4a780-3399-4867-a7dc-911173a59cf9" />
 
 
-**Question 9**
+## Question 9
 
 Write a SQL query to Delete customers with 'CUST_COUNTRY' 'UK' and 'WORKING_AREA' 'London' whose 'GRADE' is less than 3
 
@@ -272,7 +273,7 @@ and grade<3;
 <img width="1222" height="532" alt="Screenshot 2026-08-29 191644" src="https://github.com/user-attachments/assets/5be2c464-97f3-4240-85af-d90a1133b78a" />
 
 
-**Question 10**
+## Question 10
 
 Write a SQL query to Delete All Doctors with a NULL Specialization
 
