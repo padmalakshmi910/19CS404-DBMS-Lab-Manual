@@ -72,7 +72,8 @@ where department_id=50;
 
 **Output:**
 
-![Output1](output.png)
+<img width="1206" height="262" alt="Screenshot 2026-08-29 191452" src="https://github.com/user-attachments/assets/901a3160-5e1b-45f5-ab99-8f5ad9b93284" />
+
 
 **Question 2**
 
@@ -102,7 +103,8 @@ where ((sell_price-cost_price)/sell_price)*100<30;
 
 **Output:**
 
-![Output2](output.png)
+<img width="1190" height="536" alt="Screenshot 2026-08-29 191506" src="https://github.com/user-attachments/assets/cb536b74-3e91-416b-b7d1-f952c5e3119a" />
+
 
 **Question 3**
 
@@ -139,7 +141,8 @@ end;
 
 **Output:**
 
-![Output3](output.png)
+<img width="1192" height="512" alt="Screenshot 2026-08-29 191519" src="https://github.com/user-attachments/assets/7e83b015-5043-4c88-94cb-5dd1bacbc580" />
+
 
 **Question 4**
 
@@ -170,7 +173,7 @@ where department_id=110;
 
 **Output:**
 
-![Output4](output.png)
+<img width="1218" height="447" alt="Screenshot 2026-08-29 191548" src="https://github.com/user-attachments/assets/0dfb14b3-fd28-470c-892d-806c2d8cfe92" />
 
 **Question 5**
 
@@ -197,72 +200,96 @@ set category='Household' where product_name LIKE '%Detergent%';
 
 **Output:**
 
-![Output5](output.png)
+<img width="1203" height="540" alt="Screenshot 2026-08-29 191558" src="https://github.com/user-attachments/assets/d226c064-8ca1-4192-b8a1-fd337bfdec63" />
+
 
 **Question 6**
 
 Write a SQL query to Delete customers from 'customer' table where 'CUST_NAME' has exactly 6 characters.
 
-Sample table: Customer
+## CODE:
 
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
-|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     | AGENT_CODE |
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
-| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003       |
-| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008       |
-| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 | BBBBSBB      | A008       |
+```
+delete from customer where length(CUST_NAME)=6;
+```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1210" height="788" alt="Screenshot 2026-08-29 191613" src="https://github.com/user-attachments/assets/3c2af222-baa7-441c-9469-4c270176cc4c" />
+
 
 **Question 7**
----
--- Paste Question 7 here
 
-```sql
--- Paste your SQL code below for Question 7
+Write a SQL query to Delete customers from 'customer' table where 'CUST_NAME' contains the substring 'Holmes'.
+
+Sample table: Customer
+
+## CODE:
+
+```
+delete from customer
+where CUST_NAME like '%Holmes%';
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1200" height="612" alt="Screenshot 2026-08-29 191623" src="https://github.com/user-attachments/assets/85edbe60-fb09-4f48-8b0f-7a09284ea58e" />
+
 
 **Question 8**
----
--- Paste Question 8 here
 
-```sql
--- Paste your SQL code below for Question 8
+Write a SQL query to Delete customers whose 'GRADE' is greater than 2 and have a 'PAYMENT_AMT' less than the average 'PAYMENT_AMT' for all customers, or whose 'OUTSTANDING_AMT' is greater than 8000:
+
+Sample table: Customer
+
+## CODE:
+```
+delete from customer
+where(GRADE>2 and PAYMENT_AMT<(select avg(payment_amt) from customer))
+or outstanding_amt>8000;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1186" height="695" alt="Screenshot 2026-08-29 191635" src="https://github.com/user-attachments/assets/6ba4a780-3399-4867-a7dc-911173a59cf9" />
+
 
 **Question 9**
----
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
+Write a SQL query to Delete customers with 'CUST_COUNTRY' 'UK' and 'WORKING_AREA' 'London' whose 'GRADE' is less than 3
+
+Sample table: Customer
+
+## CODE:
+```
+delete from customer where cust_country='UK'
+and working_area='London'
+and grade<3;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1222" height="532" alt="Screenshot 2026-08-29 191644" src="https://github.com/user-attachments/assets/5be2c464-97f3-4240-85af-d90a1133b78a" />
+
 
 **Question 10**
----
--- Paste Question 10 here
 
-```sql
--- Paste your SQL code below for Question 10
+Write a SQL query to Delete All Doctors with a NULL Specialization
+
+Sample table: Doctors
+
+attributes : doctor_id, first_name, last_name, specialization
+
+## CODE:
+```
+delete from doctors
+where specialization is null;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1163" height="845" alt="Screenshot 2026-08-29 191703" src="https://github.com/user-attachments/assets/31ee4cd8-ec44-4cbb-a401-b575b84ec6dd" />
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
