@@ -48,7 +48,7 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ## Question 1
 
 Write a SQL statement to Update the hire_date of employees in department 50 to 2024-01-24.
-
+```
 Employees table
 
 ---------------
@@ -63,6 +63,7 @@ salary
 commission_pct
 manager_id
 department_id
+```
 
 ## CODE;
 ```
@@ -80,7 +81,7 @@ where department_id=50;
 For products with a profit % less than 30% of selling price, update the selling price to provide a profit margin of 35% over cost price of the product in the products table.
 
 PRODUCTS TABLE
-
+```
 name               type
 -----------------  ---------------
 product_id         INT
@@ -91,7 +92,7 @@ sell_price         DECIMAL(10,2)
 reorder_lvl        INT
 quantity           INT
 supplier_id        INT
-
+```
 
 ## CODE:
 
@@ -111,7 +112,7 @@ where ((sell_price-cost_price)/sell_price)*100<30;
 Write a SQL statement to increase the salary of employees under the department 40, 90 and 110 according to the company rules.
 
 Salary will be increased by 25% for the department 40, 15% for department 90 and 10% for the department 110 and the rest of the departments will remain same.
-
+```
 Employees table
 
 ---------------
@@ -126,7 +127,7 @@ salary
 commission_pct
 manager_id
 department_id
-
+```
 
 ## CODE:
 
@@ -148,7 +149,7 @@ end;
 ## Question 4
 
 Write a SQL statement to change the EMAIL and COMMISSION_PCT column of the following EMPLOYEES table with 'not available' and 0.55 for those employees whose DEPARTMENT_ID is 110.
-
+```
 Employees table
 
 ---------------
@@ -163,7 +164,7 @@ salary
 commission_pct
 manager_id
 department_id
-
+```
 
 ## CODE:
 
@@ -181,7 +182,7 @@ where department_id=110;
 Write a SQL statement to Change the category to 'Household' where product name contains 'Detergent' in the products table.
 
 Products Table 
-
+```
 name          type       
 ----------    ---------- 
 product_id     INT PRIMARY KEY        
@@ -192,6 +193,7 @@ sell_price     DECIMAL(10)
 reorder_lvl    INT        
 quantity       INT        
 supplier_id    INT           
+```
 
 ## CODE:
 
@@ -207,6 +209,14 @@ set category='Household' where product_name LIKE '%Detergent%';
 ## Question 6
 
 Write a SQL query to Delete customers from 'customer' table where 'CUST_NAME' has exactly 6 characters.
+```
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
+|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     | AGENT_CODE |
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
+| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003       |
+| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008       |
+| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 | BBBBSBB      | A008       |
+```
 
 ## CODE:
 
@@ -224,6 +234,14 @@ delete from customer where length(CUST_NAME)=6;
 Write a SQL query to Delete customers from 'customer' table where 'CUST_NAME' contains the substring 'Holmes'.
 
 Sample table: Customer
+```
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
+|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     | AGENT_CODE |
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
+| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003       |
+| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008       |
+| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 | BBBBSBB      | A008       |
+```
 
 ## CODE:
 
@@ -242,6 +260,14 @@ where CUST_NAME like '%Holmes%';
 Write a SQL query to Delete customers whose 'GRADE' is greater than 2 and have a 'PAYMENT_AMT' less than the average 'PAYMENT_AMT' for all customers, or whose 'OUTSTANDING_AMT' is greater than 8000:
 
 Sample table: Customer
+```
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
+|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     | AGENT_CODE |
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
+| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003       |
+| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008       |
+| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 | BBBBSBB      | A008       |
+```
 
 ## CODE:
 ```
@@ -260,6 +286,14 @@ or outstanding_amt>8000;
 Write a SQL query to Delete customers with 'CUST_COUNTRY' 'UK' and 'WORKING_AREA' 'London' whose 'GRADE' is less than 3
 
 Sample table: Customer
+```
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
+|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     | AGENT_CODE |
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
+| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003       |
+| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008       |
+| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 | BBBBSBB      | A008       |
+```
 
 ## CODE:
 ```
