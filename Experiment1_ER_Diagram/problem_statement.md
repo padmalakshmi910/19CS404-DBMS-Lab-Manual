@@ -43,7 +43,7 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 ### Relationships and Constraints
 
-```
+
 | Relationship | Cardinality | Participation | Notes |
 |---|---|---|---|
 | MEMBER - JOINS - PROGRAM | M:N | Partial | A member can join multiple programs |
@@ -52,7 +52,6 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 | PROGRAM - ASSIGN_TO - TRAINER | M:N | Partial | A program can have multiple trainers |
 | TRAINING_SESSION - HAS - ATTENDANCE | 1:1 | Total | Each training session has attendance |
 | MEMBER - MAKES - PAYMENT | 1:M | Partial | A member can make multiple payments |
-```
 
 ### Assumptions
 
