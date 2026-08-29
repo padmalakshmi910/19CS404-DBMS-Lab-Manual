@@ -28,7 +28,7 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 ### Entities and Attributes
 
-```
+
 ### Entities and Attributes
 
 | Entity | Attributes (PK, FK) | Notes |
@@ -39,7 +39,7 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 | TRAINER | trainer_id (PK), trainer_name | Stores trainer details |
 | ATTENDANCE | attendance_id (PK), status | Stores attendance details |
 | PAYMENT | payment_id (PK), payment_name, amount | Stores payment details |
-```
+
 
 ### Relationships and Constraints
 
