@@ -159,7 +159,6 @@ salary
 commission_pct
 manager_id
 department_id
-For example:
 
 
 ## CODE:
