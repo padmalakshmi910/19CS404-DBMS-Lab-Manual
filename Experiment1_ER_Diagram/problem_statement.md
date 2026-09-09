@@ -25,10 +25,6 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 <img width="866" height="722" alt="Screenshot 2026-08-29 220149" src="https://github.com/user-attachments/assets/90f5bdc6-874c-427a-9005-83dc759a5d05" />
 
-
-### Entities and Attributes
-
-
 ### Entities and Attributes
 
 | Entity | Attributes (PK, FK) | Notes |
@@ -81,32 +77,47 @@ The Central Library wants to manage book lending and cultural events.
 - Overdue fines apply for late returns.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_library.png)
 
-### Entities and Attributes
+<img width="1060" height="717" alt="Screenshot 2026-09-09 203220" src="https://github.com/user-attachments/assets/e2e9aafb-5c6d-4811-8d5a-583dc8e3ebed" />
+
+
+## Entities and Attributes
 
 | Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+|---|---|---|
+| MEMBER | Member_ID (PK), Name, Age, DOB, Phone_No, Email | Stores library member details |
+| BOOKS | Book_ID (PK), Title, Author, Category | Stores book details |
+| LOAN | Loan_ID (PK), Loan_Date, Return_Date, Member_ID (FK), Book_ID (FK) | Stores book lending details |
+| FINE | F_ID (PK), Fine_Date, Amount, Paid_Status, Loan_ID (FK) | Stores overdue fine details |
+| EVENTS | Event_ID (PK), Event_Name, Duration, Event_Date | Stores library event details |
+| SPEAKERS | Speaker_ID (PK), Speaker_Name | Stores event speaker/author details |
+| ROOMS | Room_ID (PK), Room_Name, Capacity | Stores library room details |
+| REGISTRATION | Reg_ID (PK), Reg_Date, Member_ID (FK), Event_ID (FK) | Stores event registration details |
 
-### Relationships and Constraints
+## Relationships and Constraints
 
 | Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+|---|---|---|---|
+| MEMBER - BORROWS - LOAN | 1 : N | Member: Partial, Loan: Total | A member can borrow many books |
+| LOAN - FOR - BOOKS | N : 1 | Loan: Total, Book: Partial | Each loan is for one book |
+| LOAN - GENERATES - FINE | 1 : 0..1 | Loan: Partial, Fine: Total | Fine is generated for overdue loans |
+| EVENTS - HAS - SPEAKERS | 1 : N | Event: Total, Speaker: Partial | An event has one or more speakers |
+| EVENTS - REGISTER - REGISTRATION | 1 : N | Event: Partial, Registration: Total | Members can register for events |
+| MEMBER - BELONGS TO - REGISTRATION | 1 : N | Member: Partial, Registration: Total | A member can have many registrations |
+| EVENTS - HELD IN - ROOMS | N : 1 | Event: Total, Room: Partial | An event is held in one room |
 
-### Assumptions
-- 
-- 
-- 
 
+## Assumptions
+
+- Each member has a unique Member_ID.
+- Each book has a unique Book_ID.
+- A member can borrow multiple books.
+- Each loan is associated with one member and one book.
+- A fine is generated only for an overdue loan.
+- Each event has at least one speaker.
+- A member can register for multiple events.
+- Each event is held in one room.
+- A room can be used for multiple events at different times.
 ---
 
 # Scenario C: Restaurant Table Reservation & Ordering
