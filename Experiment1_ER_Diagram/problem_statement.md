@@ -134,31 +134,52 @@ A popular restaurant wants to manage reservations, orders, and billing.
 - Waiters assigned to serve reservations.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_restaurant.png)
 
-### Entities and Attributes
+<img width="1152" height="480" alt="Screenshot 2026-09-10 210222" src="https://github.com/user-attachments/assets/aaba5cc8-c570-4574-9c48-e29cb181c2cc" />
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+## Entities and Attributes
 
-### Relationships and Constraints
+| Entity           | Attributes (PK, FK)                                                          | Notes                           |
+| ---------------- | ---------------------------------------------------------------------------- | ------------------------------- |
+| Customer         | customer_id (PK), name, phone, email                                         | Stores customer details         |
+| Restaurant_Table | table_id (PK), table_no, capacity                                            | Stores restaurant table details |
+| Reservation      | reservation_id (PK), customer_id (FK), table_id (FK), date, time, num_guests | Stores reservation details      |
+| Waiter           | waiter_id (PK), name, phone                                                  | Stores waiter details           |
+| Order            | order_id (PK), reservation_id (FK), order_date, total_amount                 | Stores food order details       |
+| Order_Item       | order_id (PK, FK), dish_id (PK, FK), quantity, price                         | Stores items in an order        |
+| Dish             | dish_id (PK), category_id (FK), name, price                                  | Stores dish details             |
+| Category         | category_id (PK), name                                                       | Starter, Main, Dessert          |
+| Bill             | bill_id (PK), reservation_id (FK), food_charge, service_charge, total_amount | Stores billing details          |
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+## Relationships and Constraints
 
-### Assumptions
-- 
-- 
-- 
+| Relationship                              | Cardinality | Participation                         | Notes                                  |
+| ----------------------------------------- | ----------- | ------------------------------------- | -------------------------------------- |
+| Customer - Makes - Reservation            | 1 : M       | Customer: Partial, Reservation: Total | A customer can make many reservations  |
+| Reservation - Reserves - Restaurant_Table | M : 1       | Reservation: Total, Table: Partial    | Each reservation uses one table        |
+| Reservation - Assigned_To - Waiter        | M : 1       | Reservation: Total, Waiter: Partial   | A waiter can serve many reservations   |
+| Reservation - Has - Order                 | 1 : M       | Reservation: Partial, Order: Total    | A reservation can have multiple orders |
+| Order - Contains - Order_Item             | 1 : M       | Order: Total, Order_Item: Total       | Each order contains one or more items  |
+| Order_Item - Refers_To - Dish             | M : 1       | Order_Item: Total, Dish: Partial      | A dish can appear in many order items  |
+| Dish - Belongs_To - Category              | M : 1       | Dish: Total, Category: Partial        | Each dish belongs to one category      |
+| Reservation - Generates - Bill            | 1 : 1       | Reservation: Partial, Bill: Total     | One bill is generated per reservation  |
+| Customer - Places - Order                 | 1 : M       | Customer: Partial, Order: Total       | Customer can place many orders         |
+
+## Assumptions
+
+* Each customer can make multiple reservations.
+* Each reservation is associated with one restaurant table.
+* A restaurant table can be reserved many times on different dates and times.
+* Each reservation is assigned to one waiter.
+* A reservation can have multiple food orders.
+* Each order contains one or more dishes through Order_Item.
+* Each dish belongs to one category: Starter, Main, or Dessert.
+* Each reservation generates one bill.
+* A walk-in customer is recorded as a reservation.
+* Customer details may be optional for an anonymous walk-in.
+* Order_Item uses order_id and dish_id as a composite primary key.
+* Price in Order_Item stores the price at the time of ordering.
+* The bill includes food charge and service charge.
 
 ---
 
